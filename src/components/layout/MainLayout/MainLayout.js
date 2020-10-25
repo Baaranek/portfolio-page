@@ -7,12 +7,19 @@ const MainContaier = styled.div`
   display: flex;
 `;
 
+const StyledMain = styled.main`
+  width: 100%;
+  height: 100vh;
+  background-color: #070806;
+  color: #fff;
+`;
+
 const MainLayout = ({children}) => (
   <MainContaier>
     <Menu />
-    <main>
+    <StyledMain>
       {children}
-    </main>
+    </StyledMain>
   </MainContaier>
 );
 

@@ -6,8 +6,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 
 
-const Wrapper = styled.section`
-  font-size: 1.5rem;
+const Wrapper = styled.header`
   width: 4rem;
   height: 100vh;
   background-color: #181d1f;
@@ -15,6 +14,11 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  p{
+    margin: 0;
+    padding: 0;
+  }
 
   > div{
     padding: 2rem 0;
@@ -29,20 +33,36 @@ const Wrapper = styled.section`
 `;
 
 const StyledList = styled.li`
-  padding: .2rem 0;
+  padding: .6rem 0;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &:hover{
+
+    &:after{
+      position: absolute;
+      content: '';
+      right: -1.2rem;
+      top: 1rem;
+      border: solid #38e89f;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(135deg);
+    }
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  font-size: 1.5rem;
   color: #38e89f;
 `;
 
 const StyledNavLink = styled(NavLink)`
   color: #38e89f;
   text-decoration: none;
-
-  &.hover {
-    opacity: 0.2;
-  }
 `;
 
 const array = [
@@ -52,50 +72,33 @@ const array = [
   {id:4, icon: faEnvelope, description: 'Contact', route: '/contact'},
 ];
 
-class Menu extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      activeIndex: null,
-    };
-  }
-
-  hoverHandler(index){
-    let activeIndex = this.state.activeIndex === index ? null : index;
-    setTimeout(() => {
-      this.setState({activeIndex});
-    }, 100); // SetTimeout odpowiada ze deleya i uzycie tego w płynnej animacji w przyszłosci
-  }
-
-  render() {
-    return (
-      <Wrapper>
-        <div>
-          <StyledNavLink to='/'> <StyledFontAwesomeIcon icon={faHome} /></StyledNavLink>
-        </div>
-        <div>
-          <ul>
-            { array.map( ({id, icon, description, route}) =>
-              <StyledList key={id} onMouseEnter={this.hoverHandler.bind(this, id)} onMouseLeave={(e) => this.hoverHandler()}>
-                {this.state.activeIndex === id
-                  ? <StyledNavLink to={route}>{description}</StyledNavLink>
-                  : <StyledNavLink to={route}> <StyledFontAwesomeIcon icon={icon} /></StyledNavLink>
-                }
-              </StyledList>
-            )}
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <StyledList><a target='_blank' rel='noopener noreferrer' href='https://github.com/Baaranek'><StyledFontAwesomeIcon icon={faGithub} /></a></StyledList>
-            <StyledList><a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/krystian-otto-8b93241a5/'><StyledFontAwesomeIcon icon={faLinkedin} /></a></StyledList>
-          </ul>
-        </div>
-      </Wrapper>
-    );
-  }
-}
+const Menu = () => (
+  <Wrapper>
+    <div>
+      <StyledNavLink to='/'> <StyledFontAwesomeIcon icon={faHome} /></StyledNavLink>
+    </div>
+    <div>
+      <ul>
+        { array.map( ({id, icon, description, route}) =>
+          <StyledList key={id}>
+            <StyledNavLink to={route}> 
+              <StyledFontAwesomeIcon icon={icon} />
+            </StyledNavLink>
+            <StyledNavLink to={route}>
+              {description}
+            </StyledNavLink>
+          </StyledList>
+        )}
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <StyledList><a target='_blank' rel='noopener noreferrer' href='https://github.com/Baaranek'><StyledFontAwesomeIcon icon={faGithub} /></a></StyledList>
+        <StyledList><a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/krystian-otto-8b93241a5/'><StyledFontAwesomeIcon icon={faLinkedin} /></a></StyledList>
+      </ul>
+    </div>
+  </Wrapper>
+);
 
 export default Menu;
 
