@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faGraduationCap, faHome, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 const Wrapper = styled.header`
@@ -32,27 +33,12 @@ const Wrapper = styled.header`
   }
 `;
 
-const StyledList = styled.li`
+const StyledList = styled(motion.li)`
   padding: .6rem 0;
   height: 4rem;
   display: flex;
   flex-direction: column;
   position: relative;
-
-  &:hover{
-
-    &:after{
-      position: absolute;
-      content: '';
-      right: -1.2rem;
-      top: 1rem;
-      border: solid #38e89f;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 3px;
-      transform: rotate(135deg);
-    }
-  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -63,9 +49,17 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 const StyledNavLink = styled(NavLink)`
   color: #38e89f;
   text-decoration: none;
+
+  &.active{
+    color: orange;
+
+    > * {
+      color: orange;
+    }
+  }
 `;
 
-const array = [
+const menuIcons = [
   {id:1, icon: faHome, description: 'Home', route: '/'},
   {id:2, icon: faUser, description: 'About', route: '/about'},
   {id:3, icon: faGraduationCap, description: 'Skills', route: '/skills'},
@@ -74,31 +68,33 @@ const array = [
 
 const Menu = () => (
   <Wrapper>
-    <div>
-      <StyledNavLink to='/'> <StyledFontAwesomeIcon icon={faHome} /></StyledNavLink>
-    </div>
-    <div>
+    <motion.div initial={{ x: -50  }} animate={{ x:0 }} transition={{ duration: 1 }}>
+      <StyledNavLink exact to='/'> <StyledFontAwesomeIcon icon={faHome} /></StyledNavLink>
+    </motion.div>
+    <motion.div initial={{ x: -50 }} animate={{ x:0 }} transition={{ duration: 1 }}>
       <ul>
-        { array.map( ({id, icon, description, route}) =>
-          <StyledList key={id}>
-            <StyledNavLink to={route}> 
+        { menuIcons.map( ({id, icon, description, route}) =>
+          <StyledList key={id}
+            whileHover = {{ scale: 1.2}}
+            transition = {{ type: 'spring', stiffness: 400 }}
+          >
+            <StyledNavLink exact to={route}> 
               <StyledFontAwesomeIcon icon={icon} />
             </StyledNavLink>
-            <StyledNavLink to={route}>
+            <StyledNavLink exact to={route}>
               {description}
             </StyledNavLink>
           </StyledList>
         )}
       </ul>
-    </div>
-    <div>
+    </motion.div>
+    <motion.div initial={{ x: -50 }} animate={{ x:0 }} transition={{ duration: 1 }}>
       <ul>
         <StyledList><a target='_blank' rel='noopener noreferrer' href='https://github.com/Baaranek'><StyledFontAwesomeIcon icon={faGithub} /></a></StyledList>
         <StyledList><a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/krystian-otto-8b93241a5/'><StyledFontAwesomeIcon icon={faLinkedin} /></a></StyledList>
       </ul>
-    </div>
+    </motion.div>
   </Wrapper>
 );
 
 export default Menu;
-
