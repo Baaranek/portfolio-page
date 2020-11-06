@@ -10,15 +10,16 @@ import { motion } from 'framer-motion';
 const Wrapper = styled.header`
   width: 4rem;
   height: 100vh;
-  background-color: #181d1f;
+  background-color: ${({theme}) => theme.colors.menu};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-  p{
-    margin: 0;
+  p {
     padding: 0;
+    margin: 0;
+    font-size: .8rem;
   }
 
   > div{
@@ -43,18 +44,18 @@ const StyledList = styled(motion.li)`
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
-  color: #38e89f;
+  color: ${({theme}) => theme.colors.icon};
 `;
 
 const StyledNavLink = styled(NavLink)`
-  color: #38e89f;
+  color: ${({theme}) => theme.colors.icon};
   text-decoration: none;
 
   &.active{
-    color: orange;
+    color: ${({theme}) => theme.colors.active};
 
     > * {
-      color: orange;
+      color: ${({theme}) => theme.colors.active};
     }
   }
 `;
@@ -68,10 +69,10 @@ const menuIcons = [
 
 const Menu = () => (
   <Wrapper>
-    <motion.div initial={{ x: -50  }} animate={{ x:0 }} transition={{ duration: 1 }}>
+    <motion.div initial={{ x: -50  }} animate={{ x:0 }} transition={{ duration: .5, delay: .2 }}>
       <StyledNavLink exact to='/'> <StyledFontAwesomeIcon icon={faHome} /></StyledNavLink>
     </motion.div>
-    <motion.div initial={{ x: -50 }} animate={{ x:0 }} transition={{ duration: 1 }}>
+    <motion.div initial={{ x: -50 }} animate={{ x:0 }} transition={{ duration: .5, delay: .5 }}>
       <ul>
         { menuIcons.map( ({id, icon, description, route}) =>
           <StyledList key={id}
@@ -82,13 +83,13 @@ const Menu = () => (
               <StyledFontAwesomeIcon icon={icon} />
             </StyledNavLink>
             <StyledNavLink exact to={route}>
-              {description}
+              <p>{description}</p>
             </StyledNavLink>
           </StyledList>
         )}
       </ul>
     </motion.div>
-    <motion.div initial={{ x: -50 }} animate={{ x:0 }} transition={{ duration: 1 }}>
+    <motion.div initial={{ x: -50 }} animate={{ x:0 }} transition={{ duration: .5, delay: .8 }}>
       <ul>
         <StyledList><a target='_blank' rel='noopener noreferrer' href='https://github.com/Baaranek'><StyledFontAwesomeIcon icon={faGithub} /></a></StyledList>
         <StyledList><a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/krystian-otto-8b93241a5/'><StyledFontAwesomeIcon icon={faLinkedin} /></a></StyledList>

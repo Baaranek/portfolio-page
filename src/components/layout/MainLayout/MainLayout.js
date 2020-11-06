@@ -10,8 +10,8 @@ const MainContaier = styled.div`
 const StyledMain = styled.main`
   width: 100%;
   height: 100vh;
-  background-color: #070806;
-  color: #fff;
+  background-color: ${ ({ theme }) => theme.colors.ground };
+  color: ${ ({ theme }) => theme.colors.light };
 `;
 
 const MainLayout = ({children}) => (
