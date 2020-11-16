@@ -5,5 +5,6 @@ export default {
     active: '#86c232',
     icon: '#6b6e70',
     light: '#ffffff',
+    form: '#2b2b2b',
   },
 };
