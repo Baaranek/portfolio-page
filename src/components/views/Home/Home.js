@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import logo from '../../theme/ring.png';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,11 +16,25 @@ const InsideWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 0 5rem;
+
+  img {
+    height: 500px;
+    width: 500px;
+  }
 `;
 
 const MiddleDiv = styled.div`
-
   > :nth-child(3) {
+    padding-right: 1rem;
+  }
+`;
+
+const ThirdDiv = styled.div`
+  > :nth-child(3) {
+    padding-right: 1rem;
+  }
+
+  > :nth-child(6) {
     padding-right: 1rem;
   }
 `;
@@ -29,55 +44,103 @@ const MotionSpan = styled(motion.span)`
   font-size: 3rem;
 `;
 
-const Hello = [
-  {id:1, letter: 'H', delay: .3},
-  {id:2, letter: 'e', delay: .5},
-  {id:3, letter: 'l', delay: .7},
-  {id:4, letter: 'l', delay: .9},
-  {id:5, letter: 'o', delay: 1.1},
-  {id:6, letter: ',', delay: 1.3},
+{
+  /* Text Arrays Templates for web content */
+}
+const HelloTextTemplate = [
+  { id: 1, letter: 'H', delay: 0.3 },
+  { id: 2, letter: 'e', delay: 0.4 },
+  { id: 3, letter: 'l', delay: 0.5 },
+  { id: 4, letter: 'l', delay: 0.6 },
+  { id: 5, letter: 'o', delay: 0.7 },
+  { id: 6, letter: ',', delay: 0.8 },
 ];
 
-const Hellov2 = [
-  {id:1, letter: 'I', delay: .3},
-  {id:2, letter: `'`, delay: .5},
-  {id:3, letter: 'm', delay: .7},
-  {id:4, letter: 'K', delay: 1.1},
-  {id:5, letter: 'r', delay: 1.1},
-  {id:6, letter: 'y', delay: 1.3},
-  {id:7, letter: 's', delay: 1.5},
-  {id:8, letter: 't', delay: 1.7},
-  {id:9, letter: 'i', delay: 1.9},
-  {id:10, letter: 'a', delay: 2.1},
-  {id:11, letter: 'n', delay: 2.3},
+const NameTextTemplate = [
+  { id: 1, letter: 'I', delay: 0.3 },
+  { id: 2, letter: `'`, delay: 0.4 },
+  { id: 3, letter: 'm', delay: 0.5 },
+  { id: 4, letter: 'K', delay: 0.6 },
+  { id: 5, letter: 'r', delay: 0.7 },
+  { id: 6, letter: 'y', delay: 0.8 },
+  { id: 7, letter: 's', delay: 0.9 },
+  { id: 8, letter: 't', delay: 1 },
+  { id: 9, letter: 'i', delay: 1.1 },
+  { id: 10, letter: 'a', delay: 1.2 },
+  { id: 11, letter: 'n', delay: 1.3 },
+  { id: 12, letter: ',', delay: 1.4 },
+];
 
+const ProfessionTextTemplate = [
+  { id: 1, letter: 'J', delay: 0.3 },
+  { id: 2, letter: `r`, delay: 0.4 },
+  { id: 3, letter: '.', delay: 0.5 },
+  { id: 4, letter: 'w', delay: 0.6 },
+  { id: 5, letter: 'e', delay: 0.7 },
+  { id: 6, letter: 'b', delay: 0.8 },
+  { id: 7, letter: 'd', delay: 0.9 },
+  { id: 8, letter: 'e', delay: 1 },
+  { id: 9, letter: 'v', delay: 1.1 },
+  { id: 10, letter: 'e', delay: 1.2 },
+  { id: 11, letter: 'l', delay: 1.3 },
+  { id: 12, letter: 'o', delay: 1.4 },
+  { id: 13, letter: 'p', delay: 1.5 },
+  { id: 14, letter: 'e', delay: 1.6 },
+  { id: 15, letter: 'r', delay: 1.7 },
+  { id: 16, letter: '.', delay: 1.8 },
 ];
 
 const Home = () => (
   <Wrapper>
     <InsideWrapper>
       <div>
-        { Hello.map(({ id, letter, delay }) =>
-          <MotionSpan key = {id}
-            initial={{ opacity:0, scale: 0 }} animate={{ scale: 1, opacity: 1 }} 
-            transition={{ delay: delay, duration: .3 }}
+        {/* Renders animated "Hello," */}
+        {HelloTextTemplate.map(({ id, letter, delay }) => (
+          <MotionSpan
+            key={id}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: delay, duration: 0.3 }}
           >
-            { letter }
+            {letter}
           </MotionSpan>
-        )}
+        ))}
       </div>
       <MiddleDiv>
-        { Hellov2.map(({ id, letter, delay }) =>
-          <MotionSpan key = {id}
-            initial={{ opacity:0, scale: 0 }} animate={{ scale: 1, opacity: 1 }} 
-            transition={{ delay: delay, duration: .3}}
+        {/* Renders animated "I'm Krystian," */}
+        {NameTextTemplate.map(({ id, letter, delay }) => (
+          <MotionSpan
+            key={id}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: delay, duration: 0.3 }}
           >
-            { letter }
+            {letter}
           </MotionSpan>
-        )}
+        ))}
       </MiddleDiv>
+      <ThirdDiv>
+        {/* Renders animated "Jr. web developer." */}
+        {ProfessionTextTemplate.map(({ id, letter, delay }) => (
+          <MotionSpan
+            key={id}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: delay, duration: 0.3 }}
+          >
+            {letter}
+          </MotionSpan>
+        ))}
+      </ThirdDiv>
     </InsideWrapper>
     <InsideWrapper>
+      {/* TODO === Optimize photo for better performence */}
+      <motion.img
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
+        src={logo}
+      />
     </InsideWrapper>
   </Wrapper>
 );

@@ -4,10 +4,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createGlobalStyle } from 'styled-components';
 import theme from './components/theme/Theme';
-import { ThemeProvider} from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&family=Turret+Road:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
   *, *::before, *::after {
     box-sizing: border-box;
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Turret Road', cursive;
+    font-family: 'Comfortaa', serif;
   }
   html {
     font-size: 16px;
@@ -23,15 +23,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
 ReactDOM.render(
   <React.StrictMode>
-    
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <App />
     </ThemeProvider>
-
   </React.StrictMode>,
   document.getElementById('root')
 );
