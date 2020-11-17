@@ -10,7 +10,8 @@
     }
   },
   "plugins": [
-    "react"
+    "react",
+    "react-hooks"
   ],
   "extends": [
     "eslint:recommended",
@@ -23,6 +24,8 @@
     "document": true
   },
   "rules": {
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
