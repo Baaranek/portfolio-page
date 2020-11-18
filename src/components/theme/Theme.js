@@ -8,3 +8,6 @@ export default {
     form: '#2b2b2b',
   },
 };
+
+// screen sizes
+// Paddingi

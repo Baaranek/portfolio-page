@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import logo from '../../theme/ring.png';
+import logo from '../../../assets/images/ring_old.svg';
 
 const Wrapper = styled.div`
   display: flex;
@@ -134,7 +134,6 @@ const Home = () => (
       </ThirdDiv>
     </InsideWrapper>
     <InsideWrapper>
-      {/* TODO === Optimize photo for better performence */}
       <motion.img
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
