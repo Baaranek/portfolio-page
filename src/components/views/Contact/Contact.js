@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '@components/common/Button/Button';
 
 const Contact = () => (
   <StyledWrapper>
@@ -7,7 +8,7 @@ const Contact = () => (
       <StyledInput placeholder="Email" type="text" autoComplete="off" />
       <StyledInput placeholder="Subject" type="text" autoComplete="off" />
       <StyledTextArea placeholder="Message" autoComplete="off" />
-      <StyledSubmitButton type="submit">Send</StyledSubmitButton>
+      <Button title={'Send!'} path={'0'} />
     </StyledForm>
   </StyledWrapper>
 );
@@ -68,10 +69,6 @@ const StyledTextArea = styled.textarea`
       color: transparent;
     }
   }
-`;
-
-const StyledSubmitButton = styled.button`
-  border: 5px solid ${({ theme }) => theme.colors.active};
 `;
 
 export default Contact;

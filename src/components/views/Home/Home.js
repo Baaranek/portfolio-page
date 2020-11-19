@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import logo from '@assets/images/ring_old.svg';
+import Button from '@components/common/Button/Button';
 
 import {
   HelloTextTemplate,
@@ -51,6 +52,7 @@ const Home = () => (
           </MotionSpan>
         ))}
       </ThirdDiv>
+      <Button title={'Contact Me!'} path={'/contact'} />
     </InsideWrapper>
     <InsideWrapper>
       <motion.img

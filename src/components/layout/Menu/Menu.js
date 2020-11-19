@@ -19,18 +19,22 @@ const menuIcons = [
 ];
 
 const Menu = () => (
-  <Wrapper>
+  <Wrapper
+    initial={{ x: '-4vw' }}
+    animate={{ x: 0 }}
+    transition={{ duration: 1 }}
+  >
     <motion.div
       initial={{ x: -50 }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
     >
       <StyledFontAwesomeIcon icon={faHome} />
     </motion.div>
     <motion.div
       initial={{ x: -50 }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.8 }}
     >
       <ul>
         {menuIcons.map(({ id, icon, description, route }) => (
@@ -52,7 +56,7 @@ const Menu = () => (
     <motion.div
       initial={{ x: -50 }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
+      transition={{ duration: 0.5, delay: 1.1 }}
     >
       <ul>
         <StyledList>
@@ -80,7 +84,7 @@ const Menu = () => (
 
 /* STYLES */
 
-const Wrapper = styled.header`
+const Wrapper = styled(motion.header)`
   width: 4rem;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.menu};
