@@ -40,3 +40,14 @@ export const ProfessionTextTemplate = [
   { id: 15, letter: 'r', delay: 1.7 },
   { id: 16, letter: '.', delay: 1.8 },
 ];
+
+export const AboutTextTemplate = [
+  { id: 1, letter: 'A', delay: 0.3 },
+  { id: 2, letter: 'b', delay: 0.4 },
+  { id: 3, letter: 'o', delay: 0.5 },
+  { id: 4, letter: 'u', delay: 0.6 },
+  { id: 5, letter: 't', delay: 0.7 },
+  { id: 6, letter: 'M', delay: 0.8 },
+  { id: 7, letter: 'e', delay: 0.9 },
+  { id: 8, letter: '.', delay: 1 },
+];

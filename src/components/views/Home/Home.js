@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import logo from '@assets/images/ring_old.svg';
 import Button from '@components/common/Button/Button';
+import letterVariants from '@utils/letterVariants';
 
 import {
   HelloTextTemplate,
   NameTextTemplate,
   ProfessionTextTemplate,
-} from './TextTemplates';
+} from '@utils/TextTemplates';
 
 const Home = () => (
   <Wrapper>
@@ -18,9 +19,13 @@ const Home = () => (
         {HelloTextTemplate.map(({ id, letter, delay }) => (
           <MotionSpan
             key={id}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: delay, duration: 0.3 }}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              delay: delay,
+              duration: 0.3,
+            }}
+            variants={letterVariants}
           >
             {letter}
           </MotionSpan>
@@ -31,9 +36,10 @@ const Home = () => (
         {NameTextTemplate.map(({ id, letter, delay }) => (
           <MotionSpan
             key={id}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            initial="hidden"
+            animate="visible"
             transition={{ delay: delay, duration: 0.3 }}
+            variants={letterVariants}
           >
             {letter}
           </MotionSpan>
@@ -44,9 +50,10 @@ const Home = () => (
         {ProfessionTextTemplate.map(({ id, letter, delay }) => (
           <MotionSpan
             key={id}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            initial="hidden"
+            animate="visible"
             transition={{ delay: delay, duration: 0.3 }}
+            variants={letterVariants}
           >
             {letter}
           </MotionSpan>
@@ -58,7 +65,7 @@ const Home = () => (
       <motion.img
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 2 }}
         src={logo}
       />
     </InsideWrapper>
