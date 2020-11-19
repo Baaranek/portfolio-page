@@ -1,19 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '@components/common/Button/Button';
+import { motion } from 'framer-motion';
 
 const Contact = () => (
-  <StyledWrapper>
+  <Wrapper
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    exit={{ opacity: 0 }}
+  >
     <StyledForm>
       <StyledInput placeholder="Email" type="text" autoComplete="off" />
       <StyledInput placeholder="Subject" type="text" autoComplete="off" />
       <StyledTextArea placeholder="Message" autoComplete="off" />
       <Button title={'Send!'} path={'0'} />
     </StyledForm>
-  </StyledWrapper>
+  </Wrapper>
 );
 
-const StyledWrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -12,7 +12,12 @@ import {
 } from '@utils/TextTemplates';
 
 const Home = () => (
-  <Wrapper>
+  <Wrapper
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    exit={{ opacity: 0 }}
+  >
     <InsideWrapper>
       <div>
         {/* Renders animated "Hello," */}
@@ -65,14 +70,14 @@ const Home = () => (
       <motion.img
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1, delay: 2 }}
+        transition={{ duration: 1, delay: 1.5 }}
         src={logo}
       />
     </InsideWrapper>
   </Wrapper>
 );
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   height: 100vh;

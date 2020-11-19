@@ -5,7 +5,12 @@ import { motion } from 'framer-motion';
 import { AboutTextTemplate } from '@utils/TextTemplates';
 
 const About = () => (
-  <Wrapper>
+  <Wrapper
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    exit={{ opacity: 0 }}
+  >
     {/* Left Side */}
     <InsideWrapper>
       {/* Returns 'About Me.' */}
@@ -34,7 +39,7 @@ const About = () => (
   </Wrapper>
 );
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   height: 100vh;
