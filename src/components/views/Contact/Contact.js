@@ -1,6 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Contact = () => (
+  <StyledWrapper>
+    <StyledForm>
+      <StyledInput placeholder="Email" type="text" autoComplete="off" />
+      <StyledInput placeholder="Subject" type="text" autoComplete="off" />
+      <StyledTextArea placeholder="Message" autoComplete="off" />
+      <StyledSubmitButton type="submit">Send</StyledSubmitButton>
+    </StyledForm>
+  </StyledWrapper>
+);
+
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -62,16 +73,5 @@ const StyledTextArea = styled.textarea`
 const StyledSubmitButton = styled.button`
   border: 5px solid ${({ theme }) => theme.colors.active};
 `;
-
-const Contact = () => (
-  <StyledWrapper>
-    <StyledForm>
-      <StyledInput placeholder="Email" type="text" autoComplete="off" />
-      <StyledInput placeholder="Subject" type="text" autoComplete="off" />
-      <StyledTextArea placeholder="Message" autoComplete="off" />
-      <StyledSubmitButton type="submit">Send</StyledSubmitButton>
-    </StyledForm>
-  </StyledWrapper>
-);
 
 export default Contact;

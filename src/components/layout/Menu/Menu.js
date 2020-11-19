@@ -11,59 +11,6 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const Wrapper = styled.header`
-  width: 4rem;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.colors.menu};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  p {
-    padding: 0;
-    margin: 0;
-    font-size: 0.8rem;
-  }
-
-  > div {
-    padding: 2rem 0;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0;
-    text-align: center;
-  }
-`;
-
-const StyledList = styled(motion.li)`
-  padding: 0.6rem 0;
-  height: 4rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-`;
-
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.icon};
-`;
-
-const StyledNavLink = styled(NavLink)`
-  color: ${({ theme }) => theme.colors.icon};
-  text-decoration: none;
-
-  &.active {
-    color: ${({ theme }) => theme.colors.active};
-
-    > * {
-      color: ${({ theme }) => theme.colors.active};
-    }
-  }
-`;
-
 const menuIcons = [
   { id: 1, icon: faHome, description: 'Home', route: '/' },
   { id: 2, icon: faUser, description: 'About', route: '/about' },
@@ -130,5 +77,60 @@ const Menu = () => (
     </motion.div>
   </Wrapper>
 );
+
+/* STYLES */
+
+const Wrapper = styled.header`
+  width: 4rem;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colors.menu};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  > div {
+    padding: 2rem 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0;
+    text-align: center;
+  }
+`;
+
+const StyledList = styled(motion.li)`
+  padding: 0.6rem 0;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
+
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.icon};
+`;
+
+const StyledNavLink = styled(NavLink)`
+  color: ${({ theme }) => theme.colors.icon};
+  text-decoration: none;
+
+  &.active {
+    color: ${({ theme }) => theme.colors.active};
+
+    > * {
+      color: ${({ theme }) => theme.colors.active};
+    }
+  }
+`;
 
 export default Menu;
