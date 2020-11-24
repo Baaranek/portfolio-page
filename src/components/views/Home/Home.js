@@ -9,7 +9,7 @@ import {
   HelloTextTemplate,
   NameTextTemplate,
   ProfessionTextTemplate,
-} from '@utils/TextTemplates';
+} from '@utils/textTemplates';
 
 const Home = () => (
   <Wrapper

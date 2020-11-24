@@ -1,23 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '@components/common/Button/Button';
 import { motion } from 'framer-motion';
 
-const Contact = () => (
-  <Wrapper
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 0.5 }}
-    exit={{ opacity: 0 }}
-  >
-    <StyledForm>
-      <StyledInput placeholder="Email" type="text" autoComplete="off" />
-      <StyledInput placeholder="Subject" type="text" autoComplete="off" />
-      <StyledTextArea placeholder="Message" autoComplete="off" />
-      <Button title={'Send!'} path={'0'} />
-    </StyledForm>
-  </Wrapper>
-);
+const Contact = () => {
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  console.log(email, subject, message);
+
+  return (
+    <Wrapper
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+    >
+      <StyledForm>
+        <StyledInput
+          placeholder="Email"
+          type="email"
+          autoComplete="off"
+          onChange={(e) => setEmail({ email: e.target.value })}
+        />
+        <StyledInput
+          placeholder="Subject"
+          type="text"
+          autoComplete="off"
+          onChange={(e) => setSubject({ subject: e.target.value })}
+        />
+        <StyledTextArea
+          placeholder="Message"
+          autoComplete="off"
+          onChange={(e) => setMessage({ message: e.target.value })}
+        />
+        <Button title={'Send!'} path={'0'} />
+      </StyledForm>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled(motion.div)`
   display: flex;

@@ -7,7 +7,11 @@ import {
   faHome,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faKickstarter,
+} from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -24,13 +28,13 @@ const Menu = () => (
     animate={{ x: 0 }}
     transition={{ duration: 1 }}
   >
-    <motion.div
+    <MainIconDiv
       initial={{ x: -50 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
-      <StyledFontAwesomeIcon icon={faHome} />
-    </motion.div>
+      <MainIcon icon={faKickstarter} />
+    </MainIconDiv>
     <motion.div
       initial={{ x: -50 }}
       animate={{ x: 0 }}
@@ -119,9 +123,16 @@ const StyledList = styled(motion.li)`
   position: relative;
 `;
 
+const MainIconDiv = styled(motion.div)``;
+
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.icon};
+`;
+
+const MainIcon = styled(StyledFontAwesomeIcon)`
+  font-size: 3rem;
+  color: ${({ theme }) => theme.colors.active};
 `;
 
 const StyledNavLink = styled(NavLink)`

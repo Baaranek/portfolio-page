@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import letterVariants from '@utils/letterVariants';
 import { motion } from 'framer-motion';
-import { AboutTextTemplate } from '@utils/TextTemplates';
+import { AboutTextTemplate } from '@utils/textTemplates';
 
 const About = () => (
   <Wrapper
@@ -31,7 +31,26 @@ const About = () => (
         ))}
       </HeaderDiv>
       <DescriptionDiv>
-        <p>Here is a desc</p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3 }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed
+          augue eget nulla venenatis tincidunt ut finibus metus. Duis pretium
+          sed felis et commodo. Nam magna dolor, ultricies ac tellus at,
+          tristique molestie nulla.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3 }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed
+          augue eget nulla venenatis tincidunt ut finibus metus. Duis pretium
+          sed felis et commodo. Nam magna dolor, ultricies ac tellus at,
+          tristique molestie nulla.
+        </motion.p>
       </DescriptionDiv>
     </InsideWrapper>
     {/* Right Side */}
