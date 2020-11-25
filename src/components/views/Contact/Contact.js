@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
+import { ContactTextTemplate } from '@utils/textTemplates';
+import letterVariants from '@utils/letterVariants';
 
 const Contact = () => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
@@ -17,72 +19,110 @@ const Contact = () => {
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0 }}
     >
-      <StyledForm onSubmit={onSubmit}>
-        <div>
-          <StyledInput
-            placeholder="Email"
-            type="text"
-            autoComplete="off"
-            name="email"
-            ref={register({
-              required: true,
-              minLength: 6,
-              pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-            })}
-          />
-          {errors.email && (
-            <ErrorInput
-              initial={{ width: '1vw' }}
-              animate={{ width: '20vw' }}
-              transition={{ duration: 0.5 }}
-              exit={{ width: '1vw' }}
+      <InsideWrapper>
+        <HeaderDiv>
+          {ContactTextTemplate.map(({ id, letter, delay }) => (
+            <MotionSpan
+              key={id}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                delay: delay,
+                duration: 0.3,
+              }}
+              variants={letterVariants}
+            >
+              {letter}
+            </MotionSpan>
+          ))}
+        </HeaderDiv>
+        <StyledForm onSubmit={onSubmit}>
+          <div>
+            <StyledInput
+              placeholder="Email"
+              type="text"
+              autoComplete="off"
+              name="email"
+              ref={register({
+                required: true,
+                minLength: 6,
+                pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+              })}
             />
-          )}
-        </div>
-        <div>
-          <StyledInput
-            placeholder="Subject"
-            type="text"
-            autoComplete="off"
-            name="subject"
-            ref={register({
-              required: true,
-              minLength: 5,
-            })}
-          />
-          {errors.subject && (
-            <ErrorInput
-              initial={{ width: '1vw' }}
-              animate={{ width: '20vw' }}
-              transition={{ duration: 0.5 }}
-              exit={{ width: '1vw' }}
+            {errors.email && (
+              <ErrorInput
+                initial={{ width: '1vw' }}
+                animate={{ width: '20vw' }}
+                transition={{ duration: 0.5 }}
+                exit={{ width: '1vw' }}
+              />
+            )}
+          </div>
+          <div>
+            <StyledInput
+              placeholder="Subject"
+              type="text"
+              autoComplete="off"
+              name="subject"
+              ref={register({
+                required: true,
+                minLength: 5,
+              })}
             />
-          )}
-        </div>
-        <TextAreaDiv>
-          <StyledTextArea
-            placeholder="Message"
-            autoComplete="off"
-            name="message"
-            ref={register({
-              required: true,
-              minLength: 10,
-            })}
-          />
-          {errors.message && (
-            <ErrorInput
-              initial={{ width: '1vw' }}
-              animate={{ width: '20vw' }}
-              transition={{ duration: 0.5 }}
-              exit={{ width: '1vw' }}
+            {errors.subject && (
+              <ErrorInput
+                initial={{ width: '1vw' }}
+                animate={{ width: '20vw' }}
+                transition={{ duration: 0.5 }}
+                exit={{ width: '1vw' }}
+              />
+            )}
+          </div>
+          <TextAreaDiv>
+            <StyledTextArea
+              placeholder="Message"
+              autoComplete="off"
+              name="message"
+              ref={register({
+                required: true,
+                minLength: 10,
+              })}
             />
-          )}
-        </TextAreaDiv>
-        <Button type="submit">Submit!</Button>
-      </StyledForm>
+            {errors.message && (
+              <ErrorInput
+                initial={{ width: '1vw' }}
+                animate={{ width: '20vw' }}
+                transition={{ duration: 0.5 }}
+                exit={{ width: '1vw' }}
+              />
+            )}
+          </TextAreaDiv>
+          <Button type="submit">Submit!</Button>
+        </StyledForm>
+      </InsideWrapper>
     </Wrapper>
   );
 };
+
+const HeaderDiv = styled.div`
+  > :nth-child(7) {
+    padding-right: 1rem;
+  }
+`;
+
+const InsideWrapper = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5rem;
+`;
+
+const MotionSpan = styled(motion.span)`
+  display: inline-block;
+  font-size: 3rem;
+`;
 
 const TextAreaDiv = styled.div`
   display: flex;

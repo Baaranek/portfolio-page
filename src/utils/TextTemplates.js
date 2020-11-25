@@ -47,7 +47,27 @@ export const AboutTextTemplate = [
   { id: 3, letter: 'o', delay: 0.5 },
   { id: 4, letter: 'u', delay: 0.6 },
   { id: 5, letter: 't', delay: 0.7 },
-  { id: 6, letter: 'M', delay: 0.8 },
+  { id: 6, letter: 'm', delay: 0.8 },
   { id: 7, letter: 'e', delay: 0.9 },
-  { id: 8, letter: '.', delay: 1 },
+];
+
+export const SkillsTextTemplate = [
+  { id: 1, letter: 'S', delay: 0.3 },
+  { id: 2, letter: 'k', delay: 0.4 },
+  { id: 3, letter: 'i', delay: 0.5 },
+  { id: 4, letter: 'l', delay: 0.6 },
+  { id: 5, letter: 'l', delay: 0.7 },
+  { id: 6, letter: 's', delay: 0.8 },
+];
+
+export const ContactTextTemplate = [
+  { id: 1, letter: 'C', delay: 0.3 },
+  { id: 2, letter: 'o', delay: 0.4 },
+  { id: 3, letter: 'n', delay: 0.5 },
+  { id: 4, letter: 't', delay: 0.6 },
+  { id: 5, letter: 'a', delay: 0.7 },
+  { id: 6, letter: 'c', delay: 0.8 },
+  { id: 7, letter: 't', delay: 0.9 },
+  { id: 8, letter: 'm', delay: 0.9 },
+  { id: 9, letter: 'e', delay: 0.9 },
 ];

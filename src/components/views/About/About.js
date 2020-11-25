@@ -31,32 +31,68 @@ const About = () => (
         ))}
       </HeaderDiv>
       <DescriptionDiv>
-        <motion.p
+        <Paragraph
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 3 }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed
-          augue eget nulla venenatis tincidunt ut finibus metus. Duis pretium
-          sed felis et commodo. Nam magna dolor, ultricies ac tellus at,
-          tristique molestie nulla.
-        </motion.p>
-        <motion.p
+          I&apos;m a computer science student at WSB in Poznań. I graduated
+          Technical High School for Computer Science.
+        </Paragraph>
+        <Paragraph
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 3 }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed
-          augue eget nulla venenatis tincidunt ut finibus metus. Duis pretium
-          sed felis et commodo. Nam magna dolor, ultricies ac tellus at,
-          tristique molestie nulla.
-        </motion.p>
+          I like reading fantasy and science books, for example Lord of The
+          Rings. In free time I like play computer games.
+        </Paragraph>
+        <Paragraph
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3 }}
+        >
+          I spend a lot of time learning the programming. For some time it has
+          become my passion, I try to conscientiosly learn new things.
+        </Paragraph>
+        <Paragraph
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3 }}
+        >
+          I&apos;m determined to find my first job as a web developer.
+        </Paragraph>
       </DescriptionDiv>
     </InsideWrapper>
     {/* Right Side */}
-    <InsideWrapper></InsideWrapper>
+    <InsideWrapper>
+      <Element
+        animate={{ x: [0, 50, 100, 50, 0], y: [0, -50, 0, 50, 0] }}
+        transition={{
+          x: {
+            duration: 3,
+            yoyo: Infinity,
+          },
+          y: {
+            duration: 3,
+            yoyo: Infinity,
+            ease: 'easeOut',
+          },
+        }}
+      />
+    </InsideWrapper>
   </Wrapper>
 );
+
+// Ludzik
+const Element = styled(motion.div)`
+  width: 10px;
+  height: 10px;
+  background-color: ${({ theme }) => theme.colors.active};
+  border-radius: 50%;
+`;
+
+//
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -85,5 +121,9 @@ const HeaderDiv = styled.div`
 `;
 
 const DescriptionDiv = styled.div``;
+
+const Paragraph = styled(motion.p)`
+  padding-right: 10rem;
+`;
 
 export default About;
