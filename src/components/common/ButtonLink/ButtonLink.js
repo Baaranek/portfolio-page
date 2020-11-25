@@ -5,19 +5,18 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const Button = ({ title, path }) => (
+const ButtonLink = ({ title, path }) => (
   <StyledMotionLink
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 1, delay: 0.5 }}
-    exact
     to={path}
   >
     {title}
   </StyledMotionLink>
 );
 
-Button.propTypes = {
+ButtonLink.propTypes = {
   title: PropTypes.string,
   path: PropTypes.string,
 };
@@ -40,4 +39,4 @@ const StyledMotionLink = styled(MotionLink)`
   margin-top: 3rem;
 `;
 
-export default Button;
+export default ButtonLink;

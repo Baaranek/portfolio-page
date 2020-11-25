@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import logo from '@assets/images/ring_old.svg';
-import Button from '@components/common/Button/Button';
+import ButtonLink from '@components/common/ButtonLink/ButtonLink';
 import letterVariants from '@utils/letterVariants';
 
 import {
@@ -64,7 +64,7 @@ const Home = () => (
           </MotionSpan>
         ))}
       </ThirdDiv>
-      <Button title={'Contact Me!'} path={'/contact'} />
+      <ButtonLink title={'Contact Me!'} path={'/contact'} />
     </InsideWrapper>
     <InsideWrapper>
       <motion.img
