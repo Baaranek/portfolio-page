@@ -85,7 +85,7 @@ const InsideWrapperFirst = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5rem;
+  padding: 0 0 0 5rem;
 `;
 
 const InsideWrapperSecond = styled(InsideWrapperFirst)`
