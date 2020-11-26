@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import logo from '@assets/images/ring_old.svg';
 import ButtonLink from '@components/common/ButtonLink/ButtonLink';
 import letterVariants from '@utils/letterVariants';
+import Asteroid from '@components/common/Asteroid/Asteroid';
 
 import {
   HelloTextTemplate,
@@ -18,7 +18,7 @@ const Home = () => (
     transition={{ duration: 0.5 }}
     exit={{ opacity: 0 }}
   >
-    <InsideWrapper>
+    <InsideWrapperFirst>
       <div>
         {/* Renders animated "Hello," */}
         {HelloTextTemplate.map(({ id, letter, delay }) => (
@@ -65,15 +65,10 @@ const Home = () => (
         ))}
       </ThirdDiv>
       <ButtonLink title={'Contact Me!'} path={'/contact'} />
-    </InsideWrapper>
-    <InsideWrapper>
-      <motion.img
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        src={logo}
-      />
-    </InsideWrapper>
+    </InsideWrapperFirst>
+    <InsideWrapperSecond>
+      <Asteroid />
+    </InsideWrapperSecond>
   </Wrapper>
 );
 
@@ -83,18 +78,18 @@ const Wrapper = styled(motion.div)`
   height: 100vh;
 `;
 
-const InsideWrapper = styled.div`
-  width: 50%;
-  height: 100%;
+const InsideWrapperFirst = styled.div`
+  overflow: visible;
+  width: 30%;
+  flex: 0 0 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 5rem;
+`;
 
-  img {
-    height: 500px;
-    width: 500px;
-  }
+const InsideWrapperSecond = styled(InsideWrapperFirst)`
+  flex: 0 0 70%;
 `;
 
 const MiddleDiv = styled.div`

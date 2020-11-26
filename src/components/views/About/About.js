@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import letterVariants from '@utils/letterVariants';
 import { motion } from 'framer-motion';
 import { AboutTextTemplate } from '@utils/textTemplates';
+import Asteroid from '@components/common/Asteroid/Asteroid';
 
 const About = () => (
   <Wrapper
@@ -12,7 +13,7 @@ const About = () => (
     exit={{ opacity: 0 }}
   >
     {/* Left Side */}
-    <InsideWrapper>
+    <InsideWrapperFirst>
       {/* Returns 'About Me.' */}
       <HeaderDiv>
         {AboutTextTemplate.map(({ id, letter, delay }) => (
@@ -63,36 +64,13 @@ const About = () => (
           I&apos;m determined to find my first job as a web developer.
         </Paragraph>
       </DescriptionDiv>
-    </InsideWrapper>
+    </InsideWrapperFirst>
     {/* Right Side */}
-    <InsideWrapper>
-      <Element
-        animate={{ x: [0, 50, 100, 50, 0], y: [0, -50, 0, 50, 0] }}
-        transition={{
-          x: {
-            duration: 3,
-            yoyo: Infinity,
-          },
-          y: {
-            duration: 3,
-            yoyo: Infinity,
-            ease: 'easeOut',
-          },
-        }}
-      />
-    </InsideWrapper>
+    <InsideWrapperSecond>
+      <Asteroid />
+    </InsideWrapperSecond>
   </Wrapper>
 );
-
-// Ludzik
-const Element = styled(motion.div)`
-  width: 10px;
-  height: 10px;
-  background-color: ${({ theme }) => theme.colors.active};
-  border-radius: 50%;
-`;
-
-//
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -100,13 +78,18 @@ const Wrapper = styled(motion.div)`
   height: 100vh;
 `;
 
-const InsideWrapper = styled.div`
-  width: 50%;
-  height: 100%;
+const InsideWrapperFirst = styled.div`
+  overflow: visible;
+  width: 30%;
+  flex: 0 0 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 5rem;
+`;
+
+const InsideWrapperSecond = styled(InsideWrapperFirst)`
+  flex: 0 0 70%;
 `;
 
 const MotionSpan = styled(motion.span)`
@@ -123,7 +106,7 @@ const HeaderDiv = styled.div`
 const DescriptionDiv = styled.div``;
 
 const Paragraph = styled(motion.p)`
-  padding-right: 10rem;
+  padding-right: 1rem;
 `;
 
 export default About;

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { ContactTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
+import Asteroid from '@components/common/Asteroid/Asteroid';
 
 const Contact = () => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
@@ -19,7 +20,7 @@ const Contact = () => {
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0 }}
     >
-      <InsideWrapper>
+      <InsideWrapperFirst>
         <HeaderDiv>
           {ContactTextTemplate.map(({ id, letter, delay }) => (
             <MotionSpan
@@ -99,7 +100,10 @@ const Contact = () => {
           </TextAreaDiv>
           <Button type="submit">Submit!</Button>
         </StyledForm>
-      </InsideWrapper>
+      </InsideWrapperFirst>
+      <InsideWrapperSecond>
+        <Asteroid />
+      </InsideWrapperSecond>
     </Wrapper>
   );
 };
@@ -110,13 +114,18 @@ const HeaderDiv = styled.div`
   }
 `;
 
-const InsideWrapper = styled.div`
-  width: 50%;
-  height: 100%;
+const InsideWrapperFirst = styled.div`
+  overflow: visible;
+  width: 30%;
+  flex: 0 0 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 5rem;
+`;
+
+const InsideWrapperSecond = styled(InsideWrapperFirst)`
+  flex: 0 0 70%;
 `;
 
 const MotionSpan = styled(motion.span)`

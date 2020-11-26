@@ -37,6 +37,11 @@ const StyledMotionLink = styled(MotionLink)`
   width: 10rem;
   height: 2.5rem;
   margin-top: 3rem;
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.active};
+    color: ${({ theme }) => theme.colors.light};
+  }
 `;
 
 export default ButtonLink;
