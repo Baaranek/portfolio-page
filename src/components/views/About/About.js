@@ -4,6 +4,8 @@ import letterVariants from '@utils/letterVariants';
 import { motion } from 'framer-motion';
 import { AboutTextTemplate } from '@utils/textTemplates';
 import Asteroid from '@components/common/Asteroid/Asteroid';
+import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
+import RightWrapper from '@layout/RightWrapper/RightWrapper';
 
 const About = () => (
   <Wrapper
@@ -13,7 +15,7 @@ const About = () => (
     exit={{ opacity: 0 }}
   >
     {/* Left Side */}
-    <InsideWrapperFirst>
+    <LeftWrapper>
       {/* Returns 'About Me.' */}
       <HeaderDiv>
         {AboutTextTemplate.map(({ id, letter, delay }) => (
@@ -64,11 +66,11 @@ const About = () => (
           I&apos;m determined to find my first job as a web developer.
         </Paragraph>
       </DescriptionDiv>
-    </InsideWrapperFirst>
+    </LeftWrapper>
     {/* Right Side */}
-    <InsideWrapperSecond>
+    <RightWrapper>
       <Asteroid />
-    </InsideWrapperSecond>
+    </RightWrapper>
   </Wrapper>
 );
 
@@ -76,20 +78,6 @@ const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   height: 100vh;
-`;
-
-const InsideWrapperFirst = styled.div`
-  overflow: visible;
-  width: 30%;
-  flex: 0 0 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 5rem;
-`;
-
-const InsideWrapperSecond = styled(InsideWrapperFirst)`
-  flex: 0 0 70%;
 `;
 
 const MotionSpan = styled(motion.span)`

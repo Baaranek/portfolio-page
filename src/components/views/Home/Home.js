@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import ButtonLink from '@components/common/ButtonLink/ButtonLink';
 import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
+import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
+import RightWrapper from '@layout/RightWrapper/RightWrapper';
 
 import {
   HelloTextTemplate,
@@ -18,7 +20,7 @@ const Home = () => (
     transition={{ duration: 0.5 }}
     exit={{ opacity: 0 }}
   >
-    <InsideWrapperFirst>
+    <LeftWrapper>
       <div>
         {/* Renders animated "Hello," */}
         {HelloTextTemplate.map(({ id, letter, delay }) => (
@@ -65,10 +67,10 @@ const Home = () => (
         ))}
       </ThirdDiv>
       <ButtonLink title={'Contact Me!'} path={'/contact'} />
-    </InsideWrapperFirst>
-    <InsideWrapperSecond>
+    </LeftWrapper>
+    <RightWrapper>
       <Asteroid />
-    </InsideWrapperSecond>
+    </RightWrapper>
   </Wrapper>
 );
 
@@ -76,20 +78,6 @@ const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   height: 100vh;
-`;
-
-const InsideWrapperFirst = styled.div`
-  overflow: visible;
-  width: 30%;
-  flex: 0 0 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 0 0 5rem;
-`;
-
-const InsideWrapperSecond = styled(InsideWrapperFirst)`
-  flex: 0 0 70%;
 `;
 
 const MiddleDiv = styled.div`

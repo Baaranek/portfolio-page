@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { SkillsTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
+import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
+import RightWrapper from '@layout/RightWrapper/RightWrapper';
 
 const Skills = () => (
   <Wrapper
@@ -11,7 +13,7 @@ const Skills = () => (
     transition={{ duration: 0.5 }}
     exit={{ opacity: 0 }}
   >
-    <InsideWrapper>
+    <LeftWrapper>
       <HeaderDiv>
         {SkillsTextTemplate.map(({ id, letter, delay }) => (
           <MotionSpan
@@ -61,8 +63,8 @@ const Skills = () => (
           with my email: otto.krystiann@gmail.com
         </Paragraph>
       </DescriptionDiv>
-    </InsideWrapper>
-    <InsideWrapper></InsideWrapper>
+    </LeftWrapper>
+    <RightWrapper></RightWrapper>
   </Wrapper>
 );
 
@@ -77,15 +79,6 @@ const Paragraph = styled(motion.p)`
 const MotionSpan = styled(motion.span)`
   display: inline-block;
   font-size: 3rem;
-`;
-
-const InsideWrapper = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 5rem;
 `;
 
 const Wrapper = styled(motion.div)`
