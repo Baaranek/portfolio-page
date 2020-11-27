@@ -5,6 +5,7 @@ import { SkillsTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
+import Snapshot from '@components/features/Snapshot/Snapshot';
 
 const Skills = () => (
   <Wrapper
@@ -64,7 +65,9 @@ const Skills = () => (
         </Paragraph>
       </DescriptionDiv>
     </LeftWrapper>
-    <RightWrapper></RightWrapper>
+    <RightWrapper>
+      <Snapshot />
+    </RightWrapper>
   </Wrapper>
 );
 
