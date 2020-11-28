@@ -116,10 +116,7 @@ const HexGrid = styled.ul`
   list-style: none;
   /* transform: perspective(900px) rotateX(60deg); */
 
-  @media (min-width: 1920px) {
-    width: 960px;
-  }
-  @media (max-width: 1919px) and (min-width: 1280px) {
+  @media (min-width: 1280px) {
     width: 780px;
   }
   @media (max-width: 1279px) and (min-width: 1024px) {
@@ -160,23 +157,21 @@ const Hex = styled.li`
     border-top: 40.41px solid ${({ theme }) => theme.colors.active};
   }
 
-  @media (min-width: 1920px) {
-    :nth-child(12n + 7) {
-      margin-left: 74px;
-    }
-  }
-  @media (max-width: 1919px) and (min-width: 1280px) {
+  @media (min-width: 1280px) {
     :nth-child(9n + 6) {
       margin-left: 74px;
     }
+    :nth-child(9n + 10) {
+      margin-left: 148px;
+    }
   }
   @media (max-width: 1279px) and (min-width: 1024px) {
-    :nth-child(7n + 5) {
+    :nth-child(6n + 4) {
       margin-left: 74px;
     }
   }
   @media (max-width: 1023px) and (min-width: 781px) {
-    :nth-child(5n + 4) {
+    :nth-child(4n + 3) {
       margin-left: 74px;
     }
   }

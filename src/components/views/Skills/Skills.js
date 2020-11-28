@@ -76,7 +76,7 @@ const HeaderDiv = styled.div``;
 const DescriptionDiv = styled.div``;
 
 const Paragraph = styled(motion.p)`
-  padding-right: 10rem;
+  padding-right: 1rem;
 `;
 
 const MotionSpan = styled(motion.span)`
