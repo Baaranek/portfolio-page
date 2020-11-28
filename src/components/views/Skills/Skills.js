@@ -82,6 +82,7 @@ const Paragraph = styled(motion.p)`
 const MotionSpan = styled(motion.span)`
   display: inline-block;
   font-size: 3rem;
+  color: ${({ theme }) => theme.colors.active};
 `;
 
 const Wrapper = styled(motion.div)`

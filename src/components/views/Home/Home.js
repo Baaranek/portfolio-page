@@ -94,10 +94,6 @@ const ThirdDiv = styled.div`
   > :nth-child(3) {
     padding-right: 1rem;
   }
-
-  > :nth-child(6) {
-    padding-right: 1rem;
-  }
 `;
 
 const MotionSpan = styled(motion.span)`

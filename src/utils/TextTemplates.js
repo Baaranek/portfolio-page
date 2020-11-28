@@ -23,22 +23,19 @@ export const NameTextTemplate = [
 ];
 
 export const ProfessionTextTemplate = [
-  { id: 1, letter: 'J', delay: 0.3 },
-  { id: 2, letter: `r`, delay: 0.4 },
-  { id: 3, letter: '.', delay: 0.5 },
-  { id: 4, letter: 'w', delay: 0.6 },
-  { id: 5, letter: 'e', delay: 0.7 },
-  { id: 6, letter: 'b', delay: 0.8 },
-  { id: 7, letter: 'd', delay: 0.9 },
-  { id: 8, letter: 'e', delay: 1 },
-  { id: 9, letter: 'v', delay: 1.1 },
-  { id: 10, letter: 'e', delay: 1.2 },
-  { id: 11, letter: 'l', delay: 1.3 },
-  { id: 12, letter: 'o', delay: 1.4 },
-  { id: 13, letter: 'p', delay: 1.5 },
-  { id: 14, letter: 'e', delay: 1.6 },
-  { id: 15, letter: 'r', delay: 1.7 },
-  { id: 16, letter: '.', delay: 1.8 },
+  { id: 1, letter: 'w', delay: 0.1 },
+  { id: 2, letter: 'e', delay: 0.2 },
+  { id: 3, letter: 'b', delay: 0.3 },
+  { id: 4, letter: 'd', delay: 0.4 },
+  { id: 5, letter: 'e', delay: 0.5 },
+  { id: 6, letter: 'v', delay: 0.6 },
+  { id: 7, letter: 'e', delay: 0.7 },
+  { id: 8, letter: 'l', delay: 0.8 },
+  { id: 9, letter: 'o', delay: 0.9 },
+  { id: 10, letter: 'p', delay: 1 },
+  { id: 11, letter: 'e', delay: 1.1 },
+  { id: 12, letter: 'r', delay: 1.2 },
+  { id: 13, letter: '.', delay: 1.3 },
 ];
 
 export const AboutTextTemplate = [

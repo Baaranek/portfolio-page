@@ -83,6 +83,7 @@ const Wrapper = styled(motion.div)`
 const MotionSpan = styled(motion.span)`
   display: inline-block;
   font-size: 3rem;
+  color: ${({ theme }) => theme.colors.active};
 `;
 
 const HeaderDiv = styled.div`
