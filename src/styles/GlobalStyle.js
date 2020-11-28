@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import media from '@utils/media';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Acme&family=Open+Sans:wght@300;400&display=swap');
@@ -15,6 +16,14 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;
     overflow: hidden;
+
+    ${media.tablet`
+      font-size: 14px;
+    `}
+
+    ${media.phone`
+    font-size: 12px;
+    `}
   }
 `;
 

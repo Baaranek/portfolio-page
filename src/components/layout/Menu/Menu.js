@@ -89,7 +89,7 @@ const Menu = () => (
 /* STYLES */
 
 const Wrapper = styled(motion.header)`
-  width: 4rem;
+  width: 64px;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.menu};
   display: flex;
