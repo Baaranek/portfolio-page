@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from '../Menu/Menu';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import media from '@utils/media';
 
 const MainLayout = ({ children }) => (
   <MainContaier>
@@ -16,6 +17,10 @@ MainLayout.propTypes = {
 
 const MainContaier = styled.div`
   display: flex;
+
+  ${media.phone`
+  flex-direction: column;
+`}
 `;
 
 const StyledMain = styled.main`

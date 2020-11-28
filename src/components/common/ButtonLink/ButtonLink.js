@@ -40,7 +40,7 @@ const StyledMotionLink = styled(MotionLink)`
 
   :hover {
     background-color: ${({ theme }) => theme.colors.active};
-    color: ${({ theme }) => theme.colors.light};
+    color: ${({ theme }) => theme.colors.ground};
   }
 `;
 
