@@ -11,7 +11,7 @@ LeftWrapper.propTypes = {
 
 const Wrapper = styled.div`
   overflow: visible;
-  width: 30%;
+  flex: 0 0 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;

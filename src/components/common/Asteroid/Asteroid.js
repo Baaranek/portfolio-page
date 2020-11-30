@@ -286,6 +286,9 @@ const Asteroid = () => (
 );
 
 const MotionSvg = styled(motion.svg)`
+  position: absolute;
+  overflow: visible;
+
   @media (min-width: 960px) {
     width: 100%;
     height: 80%;

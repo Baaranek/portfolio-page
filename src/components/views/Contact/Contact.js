@@ -5,10 +5,12 @@ import { useForm } from 'react-hook-form';
 import { ContactTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
-import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
-import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import { useMediaQuery } from 'react-responsive';
 import media from '@utils/media';
+
+// Layout
+import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
+import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
 const Contact = () => {

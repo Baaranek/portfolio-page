@@ -4,11 +4,13 @@ import { motion } from 'framer-motion';
 import ButtonLink from '@components/common/ButtonLink/ButtonLink';
 import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
-import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
-import RightWrapper from '@layout/RightWrapper/RightWrapper';
 // import MediaQuery from 'react-responsive'
 import { useMediaQuery } from 'react-responsive';
 // import media from '@utils/media';
+
+// Layout
+import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
+import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
 import {
@@ -89,7 +91,7 @@ const ThirdDiv = styled.div`
 
 const MotionSpan = styled(motion.span)`
   display: inline-block;
-  font-size: 3rem;
+  font-size: 3.3rem;
 `;
 
 export default Home;

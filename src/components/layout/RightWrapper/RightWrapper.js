@@ -10,16 +10,20 @@ RightWrapper.propTypes = {
 };
 
 const Wrapper = styled.div`
-  overflow: visible;
-  width: 60%;
+  position: relative;
+  flex: 0 0 60%;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
+  ${media.tablet`
+    width: 100%;
+  `}
+
   ${media.phone`
   width: 100%;
-`}
+  `}
 `;
 
 export default RightWrapper;

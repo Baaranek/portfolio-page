@@ -4,11 +4,12 @@ import letterVariants from '@utils/letterVariants';
 import { motion } from 'framer-motion';
 import { AboutTextTemplate } from '@utils/textTemplates';
 import Asteroid from '@components/common/Asteroid/Asteroid';
+import { useMediaQuery } from 'react-responsive';
+// Layout
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
-import { useMediaQuery } from 'react-responsive';
-// import media from '@utils/media';
 import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
+// import media from '@utils/media';
 
 const About = () => {
   const isDesktop = useMediaQuery({ minWidth: 1224 });

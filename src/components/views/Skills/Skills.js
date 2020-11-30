@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { SkillsTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
-import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
-import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import Hexagon from '@components/features/Hexagon/Hexagon';
 import { useMediaQuery } from 'react-responsive';
 // import media from '@utils/media';
+// Layout
+import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
+import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
 const Skills = () => {
