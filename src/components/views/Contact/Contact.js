@@ -7,6 +7,8 @@ import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
+import { useMediaQuery } from 'react-responsive';
+import media from '@utils/media';
 
 const Contact = () => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
@@ -14,6 +16,8 @@ const Contact = () => {
   const onSubmit = handleSubmit((data) => {
     console.log(data);
   });
+
+  const isDesktop = useMediaQuery({ minWidth: 1224 });
 
   return (
     <Wrapper
@@ -103,9 +107,7 @@ const Contact = () => {
           <Button type="submit">Submit!</Button>
         </StyledForm>
       </LeftWrapper>
-      <RightWrapper>
-        <Asteroid />
-      </RightWrapper>
+      <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
     </Wrapper>
   );
 };
@@ -129,9 +131,12 @@ const TextAreaDiv = styled.div`
 
 const Wrapper = styled(motion.div)`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   height: 100vh;
+
+  ${media.phone`
+    flex-direction: column;
+  `}
 `;
 
 const StyledForm = styled.form`
@@ -159,6 +164,10 @@ const StyledInput = styled.input`
       color: transparent;
     }
   }
+
+  ${media.phone`
+  width: 80%;
+  `}
 `;
 
 const StyledTextArea = styled.textarea`
@@ -183,6 +192,9 @@ const StyledTextArea = styled.textarea`
       color: transparent;
     }
   }
+  ${media.phone`
+  width: 80%;
+  `}
 `;
 
 const ErrorInput = styled(motion.div)`

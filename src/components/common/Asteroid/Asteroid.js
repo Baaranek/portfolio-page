@@ -286,7 +286,10 @@ const Asteroid = () => (
 );
 
 const MotionSvg = styled(motion.svg)`
-  width: auto;
+  @media (min-width: 960px) {
+    width: 100%;
+    height: 80%;
+  }
 `;
 
 export default Asteroid;
