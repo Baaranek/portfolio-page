@@ -14,6 +14,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import media from '@utils/media';
 
 const menuIcons = [
   { id: 1, icon: faHome, description: 'Home', route: '/' },
@@ -112,7 +113,17 @@ const Wrapper = styled(motion.header)`
     margin: 0;
     padding: 0 0;
     text-align: center;
+
+    ${media.phone`
+      display: flex;
+    `}
   }
+
+  ${media.phone`
+  flex-direction: row;
+  width: 100vw;
+  height: 64px;
+  `}
 `;
 
 const StyledList = styled(motion.li)`
@@ -121,6 +132,11 @@ const StyledList = styled(motion.li)`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  ${media.phone`
+      padding: 0.6rem 1rem;
+      align-items: center;
+    `}
 `;
 
 const MainIconDiv = styled(motion.div)``;

@@ -8,6 +8,7 @@ import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
 // import MediaQuery from 'react-responsive'
 import { useMediaQuery } from 'react-responsive';
+import media from '@utils/media';
 
 import {
   HelloTextTemplate,
@@ -82,6 +83,10 @@ const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   height: 100vh;
+
+  ${media.phone`
+    flex-direction: column;
+  `}
 `;
 
 const MiddleDiv = styled.div`
