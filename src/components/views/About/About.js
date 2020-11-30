@@ -7,18 +7,14 @@ import Asteroid from '@components/common/Asteroid/Asteroid';
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import { useMediaQuery } from 'react-responsive';
-import media from '@utils/media';
+// import media from '@utils/media';
+import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
 const About = () => {
   const isDesktop = useMediaQuery({ minWidth: 1224 });
 
   return (
-    <Wrapper
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      exit={{ opacity: 0 }}
-    >
+    <ComponentWrapper>
       {/* Left Side */}
       <LeftWrapper>
         {/* Returns 'About Me.' */}
@@ -74,19 +70,9 @@ const About = () => {
       </LeftWrapper>
       {/* Right Side */}
       <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
-    </Wrapper>
+    </ComponentWrapper>
   );
 };
-
-const Wrapper = styled(motion.div)`
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
-
-  ${media.phone`
-    flex-direction: column;
-  `}
-`;
 
 const MotionSpan = styled(motion.span)`
   display: inline-block;

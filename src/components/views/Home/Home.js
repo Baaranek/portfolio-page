@@ -8,7 +8,8 @@ import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
 // import MediaQuery from 'react-responsive'
 import { useMediaQuery } from 'react-responsive';
-import media from '@utils/media';
+// import media from '@utils/media';
+import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
 import {
   HelloTextTemplate,
@@ -20,12 +21,7 @@ const Home = () => {
   const isDesktop = useMediaQuery({ minWidth: 1224 });
 
   return (
-    <Wrapper
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      exit={{ opacity: 0 }}
-    >
+    <ComponentWrapper>
       <LeftWrapper>
         <div>
           {/* Renders animated "Hello," */}
@@ -75,19 +71,9 @@ const Home = () => {
         <ButtonLink title={'Contact Me!'} path={'/contact'} />
       </LeftWrapper>
       <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
-    </Wrapper>
+    </ComponentWrapper>
   );
 };
-
-const Wrapper = styled(motion.div)`
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
-
-  ${media.phone`
-    flex-direction: column;
-  `}
-`;
 
 const MiddleDiv = styled.div`
   > :nth-child(3) {

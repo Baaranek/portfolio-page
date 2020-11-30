@@ -7,18 +7,14 @@ import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import Hexagon from '@components/features/Hexagon/Hexagon';
 import { useMediaQuery } from 'react-responsive';
-import media from '@utils/media';
+// import media from '@utils/media';
+import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
 const Skills = () => {
   const isDesktop = useMediaQuery({ minWidth: 1224 });
 
   return (
-    <Wrapper
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      exit={{ opacity: 0 }}
-    >
+    <ComponentWrapper>
       <LeftWrapper>
         <HeaderDiv>
           {SkillsTextTemplate.map(({ id, letter, delay }) => (
@@ -72,7 +68,7 @@ const Skills = () => {
         </DescriptionDiv>
       </LeftWrapper>
       <RightWrapper>{isDesktop && <Hexagon />}</RightWrapper>
-    </Wrapper>
+    </ComponentWrapper>
   );
 };
 
@@ -88,15 +84,6 @@ const MotionSpan = styled(motion.span)`
   display: inline-block;
   font-size: 3rem;
   color: ${({ theme }) => theme.colors.active};
-`;
-
-const Wrapper = styled(motion.div)`
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
-  ${media.phone`
-    flex-direction: column;
-  `}
 `;
 
 export default Skills;

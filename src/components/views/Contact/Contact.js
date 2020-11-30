@@ -9,6 +9,7 @@ import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import { useMediaQuery } from 'react-responsive';
 import media from '@utils/media';
+import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
 const Contact = () => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
@@ -20,12 +21,7 @@ const Contact = () => {
   const isDesktop = useMediaQuery({ minWidth: 1224 });
 
   return (
-    <Wrapper
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      exit={{ opacity: 0 }}
-    >
+    <ComponentWrapper>
       <LeftWrapper>
         <HeaderDiv>
           {ContactTextTemplate.map(({ id, letter, delay }) => (
@@ -108,7 +104,7 @@ const Contact = () => {
         </StyledForm>
       </LeftWrapper>
       <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
-    </Wrapper>
+    </ComponentWrapper>
   );
 };
 
@@ -127,16 +123,6 @@ const MotionSpan = styled(motion.span)`
 const TextAreaDiv = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const Wrapper = styled(motion.div)`
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
-
-  ${media.phone`
-    flex-direction: column;
-  `}
 `;
 
 const StyledForm = styled.form`
