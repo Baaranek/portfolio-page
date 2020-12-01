@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   justify-content: center;
   padding: 0 0 0 5rem;
 
-  ${media.phone`
+  ${media.small`
   width: 100%;
   height: 100vh;
 `}

@@ -20,7 +20,7 @@ const Wrapper = styled(motion.div)`
   justify-content: space-between;
   height: 100vh;
 
-  ${media.phone`
+  ${media.small`
     flex-direction: column;
   `}
 `;

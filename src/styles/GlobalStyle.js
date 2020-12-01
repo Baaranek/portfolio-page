@@ -17,11 +17,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     overflow: hidden;
 
-    ${media.tablet`
+    ${media.medium`
       font-size: 14px;
     `}
 
-    ${media.phone`
+    ${media.small`
     font-size: 12px;
     `}
   }

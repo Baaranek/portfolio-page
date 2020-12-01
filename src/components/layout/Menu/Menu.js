@@ -114,12 +114,12 @@ const Wrapper = styled(motion.header)`
     padding: 0 0;
     text-align: center;
 
-    ${media.phone`
+    ${media.small`
       display: flex;
     `}
   }
 
-  ${media.phone`
+  ${media.small`
   flex-direction: row;
   width: 100vw;
   height: 64px;
@@ -133,7 +133,7 @@ const StyledList = styled(motion.li)`
   flex-direction: column;
   position: relative;
 
-  ${media.phone`
+  ${media.small`
       padding: 0.6rem 1rem;
       align-items: center;
     `}

@@ -18,7 +18,7 @@ MainLayout.propTypes = {
 const MainContaier = styled.div`
   display: flex;
 
-  ${media.phone`
+  ${media.small`
   flex-direction: column;
 `}
 `;

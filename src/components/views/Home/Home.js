@@ -20,7 +20,7 @@ import {
 } from '@utils/textTemplates';
 
 const Home = () => {
-  const isDesktop = useMediaQuery({ minWidth: 1224 });
+  const isDesktop = useMediaQuery({ minWidth: 780 });
 
   return (
     <ComponentWrapper>

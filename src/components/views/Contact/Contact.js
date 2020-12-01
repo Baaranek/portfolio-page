@@ -181,7 +181,7 @@ const StyledInput = styled(motion.input)`
     }
   }
 
-  ${media.phone`
+  ${media.small`
   width: 80%;
   `}
 `;
@@ -208,7 +208,7 @@ const StyledTextArea = styled(motion.textarea)`
       color: transparent;
     }
   }
-  ${media.phone`
+  ${media.small`
   width: 80%;
   `}
 `;

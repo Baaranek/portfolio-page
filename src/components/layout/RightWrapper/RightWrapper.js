@@ -17,11 +17,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  ${media.tablet`
+  ${media.medium`
     width: 100%;
   `}
 
-  ${media.phone`
+  ${media.small`
   width: 100%;
   `}
 `;
