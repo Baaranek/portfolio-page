@@ -28,6 +28,10 @@ const StyledMain = styled.main`
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.ground};
   color: ${({ theme }) => theme.colors.light};
+
+  ${media.small`
+    padding-top: 64px;
+`}
 `;
 
 export default MainLayout;
