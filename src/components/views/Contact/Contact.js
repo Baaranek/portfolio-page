@@ -44,6 +44,12 @@ const Contact = () => {
         <StyledForm onSubmit={onSubmit}>
           <div>
             <StyledInput
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1,
+              }}
               placeholder="Email"
               type="text"
               autoComplete="off"
@@ -65,6 +71,12 @@ const Contact = () => {
           </div>
           <div>
             <StyledInput
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.2,
+              }}
               placeholder="Subject"
               type="text"
               autoComplete="off"
@@ -85,6 +97,12 @@ const Contact = () => {
           </div>
           <TextAreaDiv>
             <StyledTextArea
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.4,
+              }}
               placeholder="Message"
               autoComplete="off"
               name="message"
@@ -102,7 +120,17 @@ const Contact = () => {
               />
             )}
           </TextAreaDiv>
-          <Button type="submit">Submit!</Button>
+          <Button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 2,
+            }}
+            type="submit"
+          >
+            Submit!
+          </Button>
         </StyledForm>
       </LeftWrapper>
       <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
@@ -132,7 +160,7 @@ const StyledForm = styled.form`
   flex-direction: column;
 `;
 
-const StyledInput = styled.input`
+const StyledInput = styled(motion.input)`
   width: 20vw;
   height: 3rem;
   padding: 1rem;
@@ -158,7 +186,7 @@ const StyledInput = styled.input`
   `}
 `;
 
-const StyledTextArea = styled.textarea`
+const StyledTextArea = styled(motion.textarea)`
   width: 20vw;
   height: 5rem;
   padding: 1rem;
@@ -190,7 +218,7 @@ const ErrorInput = styled(motion.div)`
   background-color: ${({ theme }) => theme.colors.active};
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   position: relative;
   font-size: 1rem;
   letter-spacing: 4px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faReact,
@@ -11,7 +11,6 @@ import {
   faGit,
   faJs,
 } from '@fortawesome/free-brands-svg-icons';
-
 import { StyledComponents } from '@styled-icons/simple-icons';
 
 const data = [
@@ -24,22 +23,47 @@ const data = [
   { id: 7, icon: faJs },
 ];
 
+const HexVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+};
+
 const Hexagon = () => (
   <Wrapper>
     <HexGrid>
       {data.map(({ id, icon }) => (
-        <Hex key={id}>
+        <Hex
+          key={id}
+          variants={HexVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: id / 2, duration: 1 }}
+        >
           <HexIn>
             <AwesomeIcon icon={icon} />
           </HexIn>
         </Hex>
       ))}
-      <Hex>
+      <Hex
+        variants={HexVariants}
+        initial="initial"
+        animate="animate"
+        transition={{ delay: 4, duration: 1 }}
+      >
         <HexIn>
           <StyledComponent size="110" />
         </HexIn>
       </Hex>
-      <Hex>
+      <Hex
+        variants={HexVariants}
+        initial="initial"
+        animate="animate"
+        transition={{ delay: 4.5, duration: 1 }}
+      >
         <HexIn>
           <Icon
             width="140"
@@ -56,7 +80,12 @@ const Hexagon = () => (
           </Icon>
         </HexIn>
       </Hex>
-      <Hex>
+      <Hex
+        variants={HexVariants}
+        initial="initial"
+        animate="animate"
+        transition={{ delay: 5, duration: 1 }}
+      >
         <HexIn>
           <Icon height="80" width="140" viewBox="0 0 12 25" fill="#6b6e70">
             <path d="M11.71 10.41C10.31 4.33 7.39 2.71 6.65 1.57 6.34 1.06 6.07 0.54 5.84 0 5.8 0.54 5.73 0.88 5.26 1.29 4.32 2.11 0.35 5.3 0.01 12.21 -0.3 18.65 4.82 22.62 5.5 23.03 6.02 23.28 6.65 23.03 6.96 22.8 9.43 21.13 12.8 16.69 11.71 10.41"></path>
@@ -65,7 +94,12 @@ const Hexagon = () => (
           </Icon>
         </HexIn>
       </Hex>
-      <Hex>
+      <Hex
+        variants={HexVariants}
+        initial="initial"
+        animate="animate"
+        transition={{ delay: 5.5, duration: 1 }}
+      >
         <HexIn>
           <Icon
             height="80"
@@ -82,7 +116,12 @@ const Hexagon = () => (
           </Icon>
         </HexIn>
       </Hex>
-      <Hex>
+      <Hex
+        variants={HexVariants}
+        initial="initial"
+        animate="animate"
+        transition={{ delay: 6, duration: 1 }}
+      >
         <HexIn>
           <Icon
             height="80"
@@ -130,7 +169,7 @@ const HexGrid = styled.ul`
   }
 `;
 
-const Hex = styled.li`
+const Hex = styled(motion.li)`
   position: relative;
   width: 140px;
   height: 80.83px;
