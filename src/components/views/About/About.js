@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { AboutTextTemplate } from '@utils/textTemplates';
 import Asteroid from '@components/common/Asteroid/Asteroid';
 import { useMediaQuery } from 'react-responsive';
+import Paragraph from '@components/common/Paragraph/Paragraph';
 // Layout
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
@@ -36,35 +37,19 @@ const About = () => {
           ))}
         </HeaderDiv>
         <DescriptionDiv>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1}>
             I&apos;m a computer science student at WSB in Poznań. I graduated
             Technical High School for Computer Science.
           </Paragraph>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1.2}>
             I like reading fantasy and science books, for example Lord of The
             Rings. In free time I like play computer games.
           </Paragraph>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1.4}>
             I spend a lot of time learning the programming. For some time it has
             become my passion, I try to conscientiosly learn new things.
           </Paragraph>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1.6}>
             I&apos;m determined to find my first job as a web developer.
           </Paragraph>
         </DescriptionDiv>
@@ -88,9 +73,5 @@ const HeaderDiv = styled.div`
 `;
 
 const DescriptionDiv = styled.div``;
-
-const Paragraph = styled(motion.p)`
-  padding-right: 1rem;
-`;
 
 export default About;

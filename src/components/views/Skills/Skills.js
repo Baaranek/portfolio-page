@@ -5,6 +5,7 @@ import { SkillsTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
 import Hexagon from '@components/features/Hexagon/Hexagon';
 import { useMediaQuery } from 'react-responsive';
+import Paragraph from '@components/common/Paragraph/Paragraph';
 // import media from '@utils/media';
 // Layout
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
@@ -34,35 +35,19 @@ const Skills = () => {
           ))}
         </HeaderDiv>
         <DescriptionDiv>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1}>
             I mainly learn frontend, but I also know some backend technologies.
           </Paragraph>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1.2}>
             HTML, CSS(SCSS), JS, React with Router and Redux including Hooks. I
             like using Styled Components with Framer Motion for basic
             animations.
           </Paragraph>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1.4}>
             I know basics of NodeJs with express. I also used MongoDb and
             websockets for small projects.
           </Paragraph>
-          <Paragraph
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
-          >
+          <Paragraph delay={1.6}>
             Check out my github profile or contact mi via contact form or
             directly with my email: otto.krystiann@gmail.com
           </Paragraph>
@@ -76,10 +61,6 @@ const Skills = () => {
 const HeaderDiv = styled.div``;
 
 const DescriptionDiv = styled.div``;
-
-const Paragraph = styled(motion.p)`
-  padding-right: 1rem;
-`;
 
 const MotionSpan = styled(motion.span)`
   display: inline-block;

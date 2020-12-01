@@ -197,16 +197,22 @@ const Button = styled.button`
   line-height: 2.5rem;
   display: block;
   text-align: center;
-  border: 1px solid ${({ theme }) => theme.colors.active};
-  color: ${({ theme }) => theme.colors.active};
+  border: 1px solid #ed6337;
+  color: #ed6337;
   background-color: transparent;
-  border-radius: 0.1rem;
+  border-radius: 0.2rem;
   width: 10rem;
   height: 2.5rem;
   margin-top: 3rem;
+  cursor: pointer;
 
   :focus {
     outline: none;
+  }
+
+  :hover {
+    background-color: #ed6337;
+    color: ${({ theme }) => theme.colors.ground};
   }
 `;
 

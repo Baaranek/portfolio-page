@@ -9,7 +9,7 @@ const ButtonLink = ({ title, path }) => (
   <StyledMotionLink
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    transition={{ duration: 1, delay: 0.5 }}
+    transition={{ duration: 1, delay: 1.4 }}
     to={path}
   >
     {title}
@@ -31,15 +31,15 @@ const StyledMotionLink = styled(MotionLink)`
   line-height: 2.5rem;
   display: block;
   text-align: center;
-  border: 1px solid ${({ theme }) => theme.colors.active};
-  color: ${({ theme }) => theme.colors.active};
-  border-radius: 0.1rem;
+  border: 1px solid #ed6337;
+  color: #ed6337;
+  border-radius: 0.2rem;
   width: 10rem;
   height: 2.5rem;
   margin-top: 3rem;
 
   :hover {
-    background-color: ${({ theme }) => theme.colors.active};
+    background-color: #ed6337;
     color: ${({ theme }) => theme.colors.ground};
   }
 `;
