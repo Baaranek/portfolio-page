@@ -5,7 +5,6 @@ import ButtonLink from '@components/common/ButtonLink/ButtonLink';
 import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
 // import MediaQuery from 'react-responsive'
-import { useMediaQuery } from 'react-responsive';
 // import media from '@utils/media';
 
 // Layout
@@ -20,8 +19,6 @@ import {
 } from '@utils/textTemplates';
 
 const Home = () => {
-  const isDesktop = useMediaQuery({ minWidth: 780 });
-
   return (
     <ComponentWrapper>
       <LeftWrapper>
@@ -72,7 +69,10 @@ const Home = () => {
         </ThirdDiv>
         <ButtonLink title={'Contact Me!'} path={'/contact'} />
       </LeftWrapper>
-      <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
+      <RightWrapper>
+        {' '}
+        <Asteroid />
+      </RightWrapper>
     </ComponentWrapper>
   );
 };

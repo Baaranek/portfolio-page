@@ -4,7 +4,6 @@ import letterVariants from '@utils/letterVariants';
 import { motion } from 'framer-motion';
 import { AboutTextTemplate } from '@utils/textTemplates';
 import Asteroid from '@components/common/Asteroid/Asteroid';
-import { useMediaQuery } from 'react-responsive';
 import Paragraph from '@components/common/Paragraph/Paragraph';
 // Layout
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
@@ -13,8 +12,6 @@ import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 // import media from '@utils/media';
 
 const About = () => {
-  const isDesktop = useMediaQuery({ minWidth: 1224 });
-
   return (
     <ComponentWrapper>
       {/* Left Side */}
@@ -55,7 +52,10 @@ const About = () => {
         </DescriptionDiv>
       </LeftWrapper>
       {/* Right Side */}
-      <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
+      <RightWrapper>
+        {' '}
+        <Asteroid />
+      </RightWrapper>
     </ComponentWrapper>
   );
 };

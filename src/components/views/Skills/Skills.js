@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { SkillsTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
+// Common
 import Hexagon from '@components/features/Hexagon/Hexagon';
+import Asteroid from '@components/common/Asteroid/Asteroid';
+
 import { useMediaQuery } from 'react-responsive';
 import Paragraph from '@components/common/Paragraph/Paragraph';
 // import media from '@utils/media';
@@ -53,7 +56,10 @@ const Skills = () => {
           </Paragraph>
         </DescriptionDiv>
       </LeftWrapper>
-      <RightWrapper>{isDesktop && <Hexagon />}</RightWrapper>
+      <RightWrapper>
+        {isDesktop && <Hexagon />}
+        {!isDesktop && <Asteroid />}
+      </RightWrapper>
     </ComponentWrapper>
   );
 };

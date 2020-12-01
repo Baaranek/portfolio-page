@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import media from '@utils/media';
 
 const svgVariants = {
   initial: {
@@ -293,6 +294,13 @@ const MotionSvg = styled(motion.svg)`
     width: 100%;
     height: 80%;
   }
+
+  ${media.small`
+    width: 70%;
+    height: 70%;
+    top: 0;
+    left: 20%;
+  `}
 `;
 
 export default Asteroid;

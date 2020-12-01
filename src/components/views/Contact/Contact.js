@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { ContactTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
-import { useMediaQuery } from 'react-responsive';
 import media from '@utils/media';
 
 // Layout
@@ -13,15 +12,18 @@ import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
 
+const ErrorVariants = {
+  initial: { width: '1vw' },
+  animate: { width: '80%', transition: { duration: 0.5 } },
+  exit: { width: '1vw' },
+};
+
 const Contact = () => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
   });
-
-  const isDesktop = useMediaQuery({ minWidth: 1224 });
-
   return (
     <ComponentWrapper>
       <LeftWrapper>
@@ -62,10 +64,10 @@ const Contact = () => {
             />
             {errors.email && (
               <ErrorInput
-                initial={{ width: '1vw' }}
-                animate={{ width: '20vw' }}
-                transition={{ duration: 0.5 }}
-                exit={{ width: '1vw' }}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={ErrorVariants}
               />
             )}
           </div>
@@ -88,10 +90,10 @@ const Contact = () => {
             />
             {errors.subject && (
               <ErrorInput
-                initial={{ width: '1vw' }}
-                animate={{ width: '20vw' }}
-                transition={{ duration: 0.5 }}
-                exit={{ width: '1vw' }}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={ErrorVariants}
               />
             )}
           </div>
@@ -113,10 +115,10 @@ const Contact = () => {
             />
             {errors.message && (
               <ErrorInput
-                initial={{ width: '1vw' }}
-                animate={{ width: '20vw' }}
-                transition={{ duration: 0.5 }}
-                exit={{ width: '1vw' }}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={ErrorVariants}
               />
             )}
           </TextAreaDiv>
@@ -133,7 +135,10 @@ const Contact = () => {
           </Button>
         </StyledForm>
       </LeftWrapper>
-      <RightWrapper>{isDesktop && <Asteroid />}</RightWrapper>
+      <RightWrapper>
+        {' '}
+        <Asteroid />
+      </RightWrapper>
     </ComponentWrapper>
   );
 };
@@ -158,10 +163,15 @@ const TextAreaDiv = styled.div`
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  padding-right: 6rem;
+
+  ${media.small`
+    padding: 0;
+  `}
 `;
 
 const StyledInput = styled(motion.input)`
-  width: 20vw;
+  width: 80%;
   height: 3rem;
   padding: 1rem;
   margin: 1rem 0 0;
@@ -180,14 +190,10 @@ const StyledInput = styled(motion.input)`
       color: transparent;
     }
   }
-
-  ${media.small`
-  width: 80%;
-  `}
 `;
 
 const StyledTextArea = styled(motion.textarea)`
-  width: 20vw;
+  width: 80%;
   height: 5rem;
   padding: 1rem;
   margin: 1rem 0 0;
@@ -208,9 +214,6 @@ const StyledTextArea = styled(motion.textarea)`
       color: transparent;
     }
   }
-  ${media.small`
-  width: 80%;
-  `}
 `;
 
 const ErrorInput = styled(motion.div)`

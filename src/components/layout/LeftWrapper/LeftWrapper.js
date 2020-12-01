@@ -18,8 +18,7 @@ const Wrapper = styled.div`
   padding: 0 0 0 5rem;
 
   ${media.small`
-  width: 100%;
-  height: 100vh;
+    width: 100%;
 `}
 `;
 
