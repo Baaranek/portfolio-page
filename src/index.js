@@ -5,15 +5,15 @@ import * as serviceWorker from './serviceWorker';
 import theme from '@theme/Theme';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '@styles/GlobalStyle';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Router>
+      <HashRouter basename="/">
         <App />
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
