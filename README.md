@@ -12,15 +12,15 @@ This is a project of my personal website, based on React.
 
 ## How to run
 
-'''
+```
 yarn start
-'''
+```
 
 or
 
-'''
+```
 npm run start
-'''
+```
 
 ## Check it out live
 
