@@ -295,6 +295,13 @@ const MotionSvg = styled(motion.svg)`
     height: 80%;
   }
 
+  ${media.medium`
+    width: 100%;
+    height: 100%;
+    bottom: 10%;
+    left: 10%;
+  `}
+
   ${media.small`
     width: 70%;
     height: 70%;

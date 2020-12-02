@@ -165,6 +165,10 @@ const StyledForm = styled.form`
   flex-direction: column;
   padding-right: 6rem;
 
+  @media (min-width: 780px) and (max-width: 1024px) {
+    padding: 0;
+  }
+
   ${media.small`
     padding: 0;
   `}

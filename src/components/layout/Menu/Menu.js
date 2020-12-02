@@ -28,7 +28,7 @@ const menuIcons = [
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery({
-    query: '(max-width: 480px)',
+    query: '(max-width: 780px)',
   });
 
   const toggle = () => setIsOpen(!isOpen);
@@ -166,12 +166,12 @@ const Wrapper = styled(motion.header)`
     padding: 0 0;
     text-align: center;
 
-    ${media.small`
+    ${media.tablet`
       display: flex;
     `}
   }
 
-  ${media.small`
+  ${media.tablet`
     flex-direction: row-reverse;
     width: 100vw;
     height: 64px;
@@ -186,7 +186,7 @@ const StyledList = styled(motion.li)`
   flex-direction: column;
   position: relative;
 
-  ${media.small`
+  ${media.tablet`
       padding: 0.6rem 1rem;
       align-items: center;
     `}

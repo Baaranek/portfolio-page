@@ -25,12 +25,12 @@ const MainContaier = styled.div`
 
 const StyledMain = styled.main`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.ground};
   color: ${({ theme }) => theme.colors.light};
 
-  ${media.small`
-    padding-top: 64px;
+  ${media.medium`
+    margin-top: 64px;
 `}
 `;
 

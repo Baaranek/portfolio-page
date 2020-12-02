@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   justify-content: center;
   padding: 0 0 0 5rem;
 
-  ${media.small`
+  ${media.medium`
     width: 100%;
 `}
 `;
