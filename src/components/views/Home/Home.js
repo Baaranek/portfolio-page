@@ -4,8 +4,6 @@ import { motion } from 'framer-motion';
 import ButtonLink from '@components/common/ButtonLink/ButtonLink';
 import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
-// import MediaQuery from 'react-responsive'
-// import media from '@utils/media';
 
 // Layout
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
@@ -68,9 +66,30 @@ const Home = () => {
           ))}
         </ThirdDiv>
         <ButtonLink title={'Contact Me!'} path={'/contact'} />
+        <Mention
+          initial={{ x: 500 }}
+          animate={{ x: 0 }}
+          transition={{
+            delay: 1,
+            duration: 0.5,
+            type: 'spring',
+            stiffness: 100,
+          }}
+        >
+          Asteroid made by{' '}
+          <a
+            href="https://www.flaticon.com/authors/icongeek26"
+            title="Icongeek26"
+          >
+            Icongeek26
+          </a>{' '}
+          <br /> from{' '}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </Mention>
       </LeftWrapper>
       <RightWrapper>
-        {' '}
         <Asteroid />
       </RightWrapper>
     </ComponentWrapper>
@@ -99,6 +118,19 @@ const MotionSpan = styled(motion.span)`
 
   @media (min-width: 78px) and (max-width: 885px) {
     font-size: 2.2rem;
+  }
+`;
+
+const Mention = styled(motion.div)`
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  background-color: ${({ theme }) => theme.colors.menu};
+  padding: 5px;
+
+  a {
+    color: ${({ theme }) => theme.colors.active};
+    text-decoration: none;
   }
 `;
 

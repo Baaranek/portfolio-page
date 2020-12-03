@@ -9,7 +9,6 @@ import Paragraph from '@components/common/Paragraph/Paragraph';
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
 import ComponentWrapper from '@layout/ComponentWrapper/ComponentWrapper';
-// import media from '@utils/media';
 
 const About = () => {
   return (
