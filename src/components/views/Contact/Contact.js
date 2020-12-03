@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
@@ -6,6 +6,7 @@ import { ContactTextTemplate } from '@utils/textTemplates';
 import letterVariants from '@utils/letterVariants';
 import Asteroid from '@components/common/Asteroid/Asteroid';
 import media from '@utils/media';
+import emailjs from 'emailjs-com';
 
 // Layout
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
@@ -20,10 +21,31 @@ const ErrorVariants = {
 
 const Contact = () => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
+  const [isSent, setIsSent] = useState(false);
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-  });
+  const sendFormConfirm = () => {
+    setIsSent(!isSent);
+  };
+
+  const onSubmit = (data, e) => {
+    emailjs
+      .send(
+        'service_uyj8wee',
+        'template_my2d0en',
+        data,
+        'user_E1UvYiAMBYWTGGoRxEPHP'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          sendFormConfirm();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <ComponentWrapper>
       <LeftWrapper>
@@ -43,7 +65,8 @@ const Contact = () => {
             </MotionSpan>
           ))}
         </HeaderDiv>
-        <StyledForm onSubmit={onSubmit}>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+          {isSent && <MessageInfo>Message Sent!</MessageInfo>}
           <div>
             <StyledInput
               initial={{ opacity: 0 }}
@@ -136,7 +159,6 @@ const Contact = () => {
         </StyledForm>
       </LeftWrapper>
       <RightWrapper>
-        {' '}
         <Asteroid />
       </RightWrapper>
     </ComponentWrapper>
@@ -249,6 +271,10 @@ const Button = styled(motion.button)`
     background-color: #ed6337;
     color: ${({ theme }) => theme.colors.ground};
   }
+`;
+
+const MessageInfo = styled.p`
+  color: green;
 `;
 
 export default Contact;
