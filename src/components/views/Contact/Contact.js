@@ -173,8 +173,12 @@ const HeaderDiv = styled.div`
 
 const MotionSpan = styled(motion.span)`
   display: inline-block;
-  font-size: 3rem;
+  font-size: 4rem;
   color: ${({ theme }) => theme.colors.active};
+
+  ${media.tablet`
+  font-size: 3rem;
+  `}
 `;
 
 const TextAreaDiv = styled.div`

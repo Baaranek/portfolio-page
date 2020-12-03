@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { AboutTextTemplate } from '@utils/textTemplates';
 import Asteroid from '@components/common/Asteroid/Asteroid';
 import Paragraph from '@components/common/Paragraph/Paragraph';
+import media from '@utils/media';
 // Layout
 import LeftWrapper from '@layout/LeftWrapper/LeftWrapper';
 import RightWrapper from '@layout/RightWrapper/RightWrapper';
@@ -61,8 +62,12 @@ const About = () => {
 
 const MotionSpan = styled(motion.span)`
   display: inline-block;
-  font-size: 3rem;
+  font-size: 4rem;
   color: ${({ theme }) => theme.colors.active};
+
+  ${media.tablet`
+  font-size: 3rem;
+  `}
 `;
 
 const HeaderDiv = styled.div`
