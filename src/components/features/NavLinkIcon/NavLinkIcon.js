@@ -1,23 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import media from '@utils/media';
 
+const MotionLink = motion.custom(NavLink);
+
 const NavLinkIcon = ({ icon, description, route }) => {
+  const [isHover, setHover] = useState(false);
+
+  const changeHoverStatus = () => setHover(!isHover);
+
   return (
     <StyledList
-      whileHover={{ scale: 1.2 }}
-      transition={{ type: 'spring', stiffness: 400 }}
+      onMouseEnter={changeHoverStatus}
+      onMouseLeave={changeHoverStatus}
     >
-      <StyledNavLink exact to={route}>
-        <StyledFontAwesomeIcon icon={icon} />
-      </StyledNavLink>
-      <StyledNavLink exact to={route}>
-        <p>{description}</p>
-      </StyledNavLink>
+      <AnimatePresence exitBeforeEnter>
+        {!isHover ? (
+          <StyledNavLink
+            key="1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            exact
+            to={route}
+            exit={{ opacity: 0, duration: 0.2 }}
+          >
+            <StyledFontAwesomeIcon icon={icon} />
+          </StyledNavLink>
+        ) : (
+          <StyledNavLink
+            key="2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            exact
+            to={route}
+            exit={{ opacity: 0, duration: 0.2 }}
+          >
+            <p>{description}</p>
+          </StyledNavLink>
+        )}
+      </AnimatePresence>
     </StyledList>
   );
 };
@@ -41,9 +68,21 @@ const StyledList = styled(motion.li)`
     `}
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled(MotionLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   color: ${({ theme }) => theme.colors.icon};
   text-decoration: none;
+
+  :hover {
+    color: ${({ theme }) => theme.colors.active};
+
+    > * {
+      color: ${({ theme }) => theme.colors.active};
+    }
+  }
 
   &.active {
     color: ${({ theme }) => theme.colors.active};
