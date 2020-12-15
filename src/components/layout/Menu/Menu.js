@@ -14,7 +14,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-// Media Querues
 import media from '@utils/media';
 import { useMediaQuery } from 'react-responsive';
 
@@ -78,13 +77,17 @@ const Menu = () => {
           animate={{ x: 0 }}
           transition={{ duration: 1 }}
         >
-          <MainIconDiv
-            initial={{ x: -50 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <MainIcon icon={faKickstarter} />
-          </MainIconDiv>
+          <div>
+            <StyledNavLink
+              exact
+              to="/"
+              initial={{ x: -50 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <MainIcon icon={faKickstarter} />
+            </StyledNavLink>
+          </div>
           <motion.div
             initial={{ x: -50 }}
             animate={{ x: 0 }}
@@ -119,7 +122,7 @@ const Menu = () => {
                   rel="noopener noreferrer"
                   href="https://github.com/Baaranek"
                 >
-                  <StyledFontAwesomeIcon icon={faGithub} />
+                  <RefLinks icon={faGithub} />
                 </a>
               </StyledList>
               <StyledList>
@@ -128,7 +131,7 @@ const Menu = () => {
                   rel="noopener noreferrer"
                   href="https://www.linkedin.com/in/krystian-otto-8b93241a5/"
                 >
-                  <StyledFontAwesomeIcon icon={faLinkedin} />
+                  <RefLinks icon={faLinkedin} />
                 </a>
               </StyledList>
             </ul>
@@ -192,8 +195,6 @@ const StyledList = styled(motion.li)`
     `}
 `;
 
-const MainIconDiv = styled(motion.div)``;
-
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.icon};
@@ -202,6 +203,12 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 const MainIcon = styled(StyledFontAwesomeIcon)`
   font-size: 3rem;
   color: ${({ theme }) => theme.colors.active};
+`;
+
+const RefLinks = styled(StyledFontAwesomeIcon)`
+  :hover {
+    color: ${({ theme }) => theme.colors.active};
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
