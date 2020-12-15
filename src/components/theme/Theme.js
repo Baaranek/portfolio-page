@@ -1,8 +1,8 @@
 export default {
   colors: {
-    menu: '#13171F',
-    ground: '#1C1F26',
-    active: '#961227',
+    menu: '#0D0D0D',
+    ground: '#101010',
+    active: '#ed6337',
     icon: '#6b6e70',
     light: '#ffffff',
     form: '#2b2b2b',
