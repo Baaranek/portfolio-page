@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import NavLinkIcon from '../../features/NavLinkIcon/NavLinkIcon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
@@ -95,18 +96,12 @@ const Menu = () => {
           >
             <ul>
               {menuIcons.map(({ id, icon, description, route }) => (
-                <StyledList
+                <NavLinkIcon
                   key={id}
-                  whileHover={{ scale: 1.2 }}
-                  transition={{ type: 'spring', stiffness: 400 }}
-                >
-                  <StyledNavLink exact to={route}>
-                    <StyledFontAwesomeIcon icon={icon} />
-                  </StyledNavLink>
-                  <StyledNavLink exact to={route}>
-                    <p>{description}</p>
-                  </StyledNavLink>
-                </StyledList>
+                  icon={icon}
+                  route={route}
+                  description={description}
+                />
               ))}
             </ul>
           </motion.div>
@@ -141,8 +136,6 @@ const Menu = () => {
     </>
   );
 };
-
-/* STYLES */
 
 const Wrapper = styled(motion.header)`
   width: 64px;
