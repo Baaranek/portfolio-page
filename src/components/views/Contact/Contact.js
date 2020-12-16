@@ -248,7 +248,7 @@ const StyledTextArea = styled(motion.textarea)`
 
 const ErrorInput = styled(motion.div)`
   height: 2px;
-  background-color: ${({ theme }) => theme.colors.active};
+  background-color: ${({ theme }) => theme.colors.error};
 `;
 
 const Button = styled(motion.button)`

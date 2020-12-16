@@ -51,7 +51,7 @@ const Skills = () => {
             websockets for small projects.
           </Paragraph>
           <Paragraph delay={1.6}>
-            Check out my github profile or contact mi via contact form or
+            Check out my github profile or contact me via contact form or
             directly with my email: otto.krystiann@gmail.com
           </Paragraph>
         </DescriptionDiv>
