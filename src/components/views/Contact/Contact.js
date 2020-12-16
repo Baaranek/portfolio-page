@@ -266,13 +266,17 @@ const Button = styled(motion.button)`
   height: 2.5rem;
   margin-top: 3rem;
   cursor: pointer;
+  transition: all 1s;
+  background-size: 200%;
+  background-position: 100% 0;
+  background-image: linear-gradient(45deg, #ed6337 50%, transparent 50%);
 
   :focus {
     outline: none;
   }
 
   :hover {
-    background-color: #ed6337;
+    background-position: 0 100%;
     color: ${({ theme }) => theme.colors.ground};
   }
 `;

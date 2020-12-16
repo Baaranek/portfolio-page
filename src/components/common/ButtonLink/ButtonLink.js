@@ -37,10 +37,14 @@ const StyledMotionLink = styled(MotionLink)`
   width: 10rem;
   height: 2.5rem;
   margin-top: 3rem;
+  transition: all 1s;
+  background-size: 200%;
+  background-position: 100% 0;
+  background-image: linear-gradient(45deg, #ed6337 50%, transparent 50%);
 
   :hover {
-    background-color: #ed6337;
     color: ${({ theme }) => theme.colors.ground};
+    background-position: 0 100%;
   }
 `;
 
