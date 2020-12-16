@@ -154,6 +154,10 @@ const Wrapper = styled(motion.header)`
 
   > div {
     padding: 2rem 0;
+
+    ${media.tablet`
+      padding: 0;
+  `}
   }
 
   ul {
@@ -218,9 +222,11 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const BurgerMenu = styled(motion.div)`
-  width: 80px;
+  width: 3rem;
   cursor: pointer;
-  height: 80px;
+  height: 2rem;
+  text-align: center;
+  margin-right: 1rem;
 
   :hover {
     > * {
@@ -229,11 +235,11 @@ const BurgerMenu = styled(motion.div)`
   }
 
   span {
-    margin-top: 5px;
+    margin-top: 0.4rem;
     display: block;
-    width: 50%;
+    width: 100%;
     border-radius: 2px;
-    height: 2px;
+    height: 0.2rem;
     background: #fff;
   }
 `;
