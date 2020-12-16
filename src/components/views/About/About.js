@@ -35,8 +35,8 @@ const About = () => {
         </HeaderDiv>
         <DescriptionDiv>
           <Paragraph delay={1}>
-            I&apos;m a computer science student at WSB in Poznań. I graduated
-            Technical High School for Computer Science.
+            I&apos;m a computer science student at WSB in Poznań. <br /> I
+            graduated Technical High School for Computer Science.
           </Paragraph>
           <Paragraph delay={1.2}>
             I like reading fantasy and science books, for example Lord of The
